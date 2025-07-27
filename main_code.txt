@@ -1,0 +1,109 @@
+#main_code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vikreta Mart Prototype</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+    .screen {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: white;
+    }
+    .dashboard {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tab {
+      flex: 1 1 200px;
+      background: #eaeaea;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .common {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Welcome Screen -->
+    <div class="screen">
+      <h2>Welcome to Vikreta Mart</h2>
+      <button onclick="showVendorFlow()">Vendor Login</button>
+      <button onclick="showSupplierFlow()">Supplier Login</button>
+    </div>
+
+    <!-- Vendor Dashboard -->
+    <div class="screen" id="vendorFlow" style="display:none">
+      <h2>Vendor Dashboard</h2>
+      <div class="dashboard">
+        <div class="tab">Overview 📊</div>
+        <div class="tab">Orders 🛒</div>
+        <div class="tab">Suppliers ✅</div>
+        <div class="tab">Community 📢</div>
+        <div class="tab">Collective Demand 📦</div>
+      </div>
+    </div>
+
+    <!-- Supplier Dashboard -->
+    <div class="screen" id="supplierFlow" style="display:none">
+      <h2>Supplier Dashboard</h2>
+      <div class="dashboard">
+        <div class="tab">Overview 📋</div>
+        <div class="tab">Orders 📦</div>
+        <div class="tab">Products 🧾</div>
+        <div class="tab">Profile ⚙</div>
+        <div class="tab">Analytics 📈</div>
+      </div>
+    </div>
+
+    <!-- Common Features -->
+    <div class="screen common">
+      <h2>Common Features</h2>
+      <div class="dashboard">
+        <div class="tab">Chatbot 💬 (EN/HI)</div>
+        <div class="tab">Logout 🚪</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showVendorFlow() {
+      document.getElementById('vendorFlow').style.display = 'block';
+      document.getElementById('supplierFlow').style.display = 'none';
+    }
+    function showSupplierFlow() {
+      document.getElementById('supplierFlow').style.display = 'block';
+      document.getElementById('vendorFlow').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
